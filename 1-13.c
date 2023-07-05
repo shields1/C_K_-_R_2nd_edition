@@ -9,7 +9,6 @@
 #define IN  1       /* inside a word                     */
 #define OUT 0       /* outside a word                    */
 #define MAXWORD 15  /* maximum of words to fit our array */
-#define MAXHIST 15  /* maximum of characters in a word   */
 
 int main() {
 	
