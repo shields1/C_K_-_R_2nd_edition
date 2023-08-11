@@ -6,8 +6,6 @@
  *     horizontal; a vertical orientation is more challenging.
  */
  
-#define IN  1       /* inside a word                     */
-#define OUT 0       /* outside a word                    */
 #define MAXWORD 15  /* maximum of words to fit our array */
 
 int main() {
