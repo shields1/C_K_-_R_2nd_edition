@@ -11,7 +11,6 @@
 #define MAXWORD 15  /* maximum of words to fit our array */
 
 int main() {
-	
 	int c, i, j, charCount, wordCount;
 	int wordLength[MAXWORD];
 	
