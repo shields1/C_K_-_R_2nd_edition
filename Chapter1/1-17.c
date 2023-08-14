@@ -2,13 +2,13 @@
 /*
  * Exercise 1-17:
  *     Write a program to print all input lines that are
- *     long than 80 characters
+ *     longer than 80 characters
  */
 #define MAXLINE 1000
 #define PRINTLINE 81
 
-int getline(char line[], int maxline);
-void printline(char line[], int len);
+int getline(char line[], int limit);
+void printline(char line[]);
 
 int main() {
     int len;                 /* length of line */
@@ -16,10 +16,11 @@ int main() {
 
     while ((len = getline(line, MAXLINE)) > 0) {
         if (len >= PRINTLINE) {
-            printline(line, len);
+            printline(line);
         }
 
     }
+    return 0;
 }
 /* getline: reads line into line, returns length of line */
 int getline(char line[], int limit) {
@@ -37,6 +38,6 @@ int getline(char line[], int limit) {
 }
 
 /* printline: print an array of characters */
-void printline(char line[], int len) {
+void printline(char line[]) {
     printf("%s", line);
 }
