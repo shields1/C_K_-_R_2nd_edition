@@ -6,7 +6,7 @@
 */
 #define MAXLINE 1000
 
-int getline(char line[], int limit);
+int get_line(char line[], int limit);
 void reverseline(char line[], int totalChars);
 void printline(char line[]);
 
@@ -14,15 +14,15 @@ int main() {
     int len;                        /* counter    */
     char line[MAXLINE];             /* input line */
 
-    while ((len = getline(line, MAXLINE)) > 0) {
+    while ((len = get_line(line, MAXLINE)) > 0) {
         reverseline(line, len);
         printline(line);
     }
     return 0;
 }
 
-/* getline: reads line into line, return length of line */
-int getline(char line[], int limit) {
+/* get_line: reads line into line, return length of line */
+int get_line(char line[], int limit) {
     int c, i;
     for (i = 0; i < limit - 1 && (c = getchar()) != EOF && c != '\n'; ++i) {
         line[i] = c;
