@@ -8,26 +8,30 @@
 #define MAXLINE 1000
 #define ROWLENGTH 10
 
-int get_line(char line[], int limit, int rowLenght);
+int get_line(char line[], int limit);
 void print_line(char line[]);
 
 int main() {
   int len;
   char line[MAXLINE];
 
-  while ((len = get_line(line, MAXLINE, ROWLENGTH) > 0)) {
+  while ((len = get_line(line, MAXLINE) > 0)) {
     print_line(line);
   }
 }
 
-int get_line(char line[], int limit, int rowLenght) {
+int get_line(char line[], int limit) {
   int c, i;
+  int counter = 0;
 
   for (i = 0; i < limit && (c = getchar()) != EOF && c != '\n'; i++) {
-    if (i > rowLenght) {
+    if ((counter > ROWLENGTH) && c == ' ') {
       line[i] = '\n';
+      i++;
+      counter = 0;
     }
     line[i] = c;
+    counter++;
   }
   if (c = '\n') {
     line[i] = c;
